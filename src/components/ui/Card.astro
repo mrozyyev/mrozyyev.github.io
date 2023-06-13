@@ -1,8 +1,10 @@
 ---
 import projectImage from '@assets/images/project.png';
+import ba from '@assets/images/ba3.png';
 import { Image } from '@astrojs/image/components';
 import Tags from '@components/ui/Tags.astro';
 interface Props {
+	imgUrl?: string;
 	url?: string;
 	alt?: string;
 	title?: string;
@@ -10,7 +12,8 @@ interface Props {
 	children?: HTMLElement | HTMLElement[];
 }
 
-const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'] } = Astro.props;
+const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'], imgUrl='src/assets/images/project.png'} = Astro.props;
+
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
@@ -18,16 +21,20 @@ const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags
 		data-testId="card"
 		class="rounded-xl bg-white p-3 shadow-lg duration-100 hover:scale-105 hover:transform hover:shadow-xl"
 	>
-		<a href={url} aria-label="link to project">
+
+		<a href={url} target="_blank" aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl justify-center">
 				<Image
-					src={projectImage}
+					src={imgUrl}
 					alt={alt}
-					aspectRatio="4:4"
+					fit='cover'
 					format="png"
-					width={400}
-					height={400}
 					loading="eager"
+					width={400}
+					height={300}
+					
+
+					
 				/>
 			</div>
 			<div class="mt-1 p-2">
