@@ -1,6 +1,6 @@
 ---
 inProgress: false
-imgUrl: 'src/assets/images/bagt_achary.png'
+imgUrl: 'images/bagt_achary.png'
 title: Bagt Achary
 img_alt: Bagt achary
 link: http://ba.mrozyyev.xyz
