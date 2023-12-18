@@ -18,10 +18,22 @@ const posts = await getCollection("posts");
   <main class="flex flex-col gap-20">
     <article class="flex flex-col gap-8">
       <h1 class="text-3xl text-neutral-100">{presentation.title}</h1>
-      <h2
-        class="max-w-[60ch] leading-6"
-        set:html={convertAsteriskToStrongTag(presentation.description)}
-      />
+      <h2 class="max-w-[2/3] leading-6">
+        <p>
+          I'm a passionate web developer with a background in <span
+            >UI/UX design</span
+          >. Originally from <span>Turkmenistan</span>, I'm now diving into the
+          world of IT with a Master's pursuit in <span>Romania</span>. With a
+          keen eye for detail and a strong foundation in creating seamless user
+          experiences, I bring a unique blend of technical expertise and design
+          sensibility to the world of web development. <br /> Currently, I'm on the
+          lookout for <span>hybrid or remote job opportunities</span> that align with my academic
+          pursuits, offering my skills and dedication as a <span>work-student</span>. 
+          Let's connect and explore the possibilities of crafting innovative
+          digital experiences together!
+        </p>
+      </h2>
+
       <SocialLinks />
     </article>
 
@@ -80,3 +92,9 @@ const posts = await getCollection("posts");
     </article>
   </main>
 </Layout>
+
+<style is:inline>
+  span {
+    color: rgb(245, 245, 245);
+  }
+</style>
