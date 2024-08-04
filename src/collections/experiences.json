@@ -1,0 +1,25 @@
+[
+	{
+		"dates": "November 2022 · PRESENT",
+		"role": "Web developer",
+		"company": "Self employed @ Upwork & Fiverr",
+		"description": "Offering my illustrative and creative skills.",
+		"logo": "/assets/images/experiences/upwork-icon.svg"
+	},
+	{
+		"dates": "September 2020 - PRESENT",
+		"role": "UI/UX designer",
+		"company": "Self employed @ Upwork & Fiverr",
+		"description": "Offering my illustrative and creative skills.",
+		"logo": "/assets/images/experiences/fiverr-icon.svg"
+	},
+	
+	{
+		"dates": "December 2019 · September 2020",
+		"role": "Graphic designer",
+		"company": "Self employed @ Upwork & Fiverr",
+		"description": "Offered my illustrative and creative skills.",
+		"logo": "/assets/images/experiences/upwork-icon.svg"
+	}
+
+]
