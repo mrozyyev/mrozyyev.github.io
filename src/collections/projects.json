@@ -22,5 +22,11 @@
 		"description": "Website for Delivery fleet operating in Romania.",
 		"image": "/assets/images/projects/monzogroup.png",
 		"url": "https://monzogroup.eu"
+	},
+	{
+		"name": "Work In Progress - LibreMemorial",
+		"description": "Free - Open-Source Memorial Page Platform",
+		"image": "/assets/images/projects/libreMemorial.png",
+		"url": "https://libre-memorial.vercel.app"
 	}
 ]
