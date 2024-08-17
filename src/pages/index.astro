@@ -6,6 +6,8 @@ import Separator from "../components/home/separator.astro";
 import Writings from "../components/home/writings.astro";
 import Skills from "../components/home/skills2.astro";
 import Layout from "../layouts/main.astro";
+import ProjectScroll from "../components/project-scroll.astro";
+import ProjectsScroll from "../components/home/projects-scroll.astro";
 
 ---
 
@@ -74,7 +76,8 @@ import Layout from "../layouts/main.astro";
           </div>
           <div class="relative z-30 px-10">
             <img
-              src="/assets/images/photo.png"
+              src="/assets/images/photo.webp"
+              alt="Illustration of a Web developer"
               loading="eager"
               decoding="auto"
               class="relative z-30 w-full aspect-[790/1189] md:max-w-md mx-auto dark:-translate-y-0.5"
@@ -93,7 +96,8 @@ import Layout from "../layouts/main.astro";
   <Separator text="Languages & Tools I use"/>
   <Skills />
   <Separator text="Some of my projects" />
-  <Projects />
+  <!-- <Projects /> -->
+  <ProjectsScroll />
   <!-- <Separator text="Some of my Posts" />
   <Writings /> -->
 </Layout>

@@ -4,7 +4,6 @@ import Button from "../button.astro";
 import Project from "../project.astro";
 import { skills } from "../../const/const";
 import { getIconComponent } from "../../icons/IconAll.astro";
-
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -14,37 +13,30 @@ import { getIconComponent } from "../../icons/IconAll.astro";
     My Languages and tools
   </h2>
   <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-    Being curious & life-long learner I'm always learning new things, so
-    I'll keep adding more of these!
+    Being curious & life-long learner I'm always learning new things, so I'll
+    keep adding more of these!
   </p>
-  <div
+  <ul
     class="grid grid-cols-2 items-stretch w-full sm:grid-cols-2 md:grid-cols-3 gap-7 mt-7"
   >
-
-  
-
-  {
-    skills.map(({ icon, title }) => {
-      const IconComponent = getIconComponent(icon);
-      return (
-        <li class="li-skills">
-          {IconComponent && <IconComponent />}
-          <p class="dark:text-white p-skill">{title}</p>
-        </li>
-      );
-    })
-  }
-  
-
-
-  </div>
+    {
+      skills.map(({ icon, title }) => {
+        const IconComponent = getIconComponent(icon);
+        return (
+          <li class="li-skills">
+            {IconComponent && <IconComponent />}
+            <p class="dark:text-white p-skill">{title}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
 
   <!-- <div class="flex items-center justify-center w-full py-5">
     <Button text="View All My Projects" link="/projects" />
   </div> -->
 </section>
 <style>
-
   .li-skills {
     display: flex;
     list-style: none;

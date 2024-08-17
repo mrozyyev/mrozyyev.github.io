@@ -2,31 +2,31 @@
 	{
 		"name": "Aqua Packing",
 		"description": "Website for filling machinery.",
-		"image": "/assets/images/projects/aquapacking.com.png",
+		"image": "/assets/images/projects/aquapacking1.webp",
 		"url": "https://aquapacking.com/en/"
 	},
 	{
 		"name": "Kuliline salads",
 		"description": "Website for ready made salads in Romania.",
-		"image": "/assets/images/projects/kulsalads.png",
+		"image": "/assets/images/projects/kulsalads1.webp",
 		"url": "https://kulsalads2.vercel.app/"
 	},
 	{
 		"name": "La Istanbul Kebap",
 		"description": "Website for Shaorma cafe in Romania.",
-		"image": "/assets/images/projects/laistanbul.png",
+		"image": "/assets/images/projects/laistanbul1.webp",
 		"url": "https://la-istanbul.vercel.app/"
 	},
 	{
 		"name": "Monzogroup SRL",
 		"description": "Website for Delivery fleet operating in Romania.",
-		"image": "/assets/images/projects/monzogroup.png",
+		"image": "/assets/images/projects/monzogroup1.webp",
 		"url": "https://monzogroup.eu"
 	},
 	{
 		"name": "Work In Progress - LibreMemorial",
 		"description": "Free - Open-Source Memorial Page Platform",
-		"image": "/assets/images/projects/libreMemorial.png",
+		"image": "/assets/images/projects/libreMemorial1.webp",
 		"url": "https://libre-memorial.vercel.app"
 	}
 ]

@@ -1,7 +1,8 @@
 ---
 import projects from "../collections/projects.json";
 import PageHeading from "../components/page-heading.astro";
-import Project from "../components/project.astro";
+import ProjectScroll from "../components/project-scroll.astro";
+// import Project from "../components/project.astro";
 import Layout from "../layouts/main.astro";
 ---
 
@@ -18,7 +19,7 @@ import Layout from "../layouts/main.astro";
       {
         projects.map((project) => {
           return (
-            <Project
+            <ProjectScroll
               name={project.name}
               description={project.description}
               image={project.image}
