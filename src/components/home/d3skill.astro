@@ -1,0 +1,119 @@
+<!-- need to pass ui framework -->
+<script is:inline src="https://d3js.org/d3.v7.min.js"></script>
+
+<script  defer>
+    const nodes = [
+      { id: 'Languages', group: 1, size: 20, icon: '🌐' },
+      { id: 'JavaScript', group: 2, size: 15, icon: '📜' },
+      { id: 'AstroJS', group: 2, size: 10, icon: '⭐' },
+      { id: 'ReactJS', group: 2, size: 10, icon: '⚛️' },
+      { id: 'Skills', group: 1, size: 20, icon: '💼' },
+      { id: 'Design', group: 2, size: 15, icon: '🎨' },
+      { id: 'Graphic Design', group: 3, size: 10, icon: '🖌️' },
+      { id: 'Photoshop', group: 4, size: 10, icon: '🖼️' },
+      { id: 'Tools', group: 1, size: 20, icon: '🔧' },
+      { id: 'VSCode', group: 2, size: 10, icon: '📝' },
+      { id: 'Postman', group: 2, size: 10, icon: '📮' },
+    ];
+
+    const links = [
+      { source: 'Languages', target: 'JavaScript' },
+      { source: 'JavaScript', target: 'AstroJS' },
+      { source: 'JavaScript', target: 'ReactJS' },
+      { source: 'Skills', target: 'Design' },
+      { source: 'Design', target: 'Graphic Design' },
+      { source: 'Graphic Design', target: 'Photoshop' },
+      { source: 'Tools', target: 'VSCode' },
+      { source: 'Tools', target: 'Postman' },
+    ];
+
+    const width = 600;
+    const height = 400;
+
+    const svg = d3.select('#graph')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .classed('w-full h-full', true);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(80))
+      .force('charge', d3.forceManyBody().strength(-100))  // Reduced repulsion strength
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(d => d.size + 10))
+      .alpha(0.8)  // Increased alpha for stronger attraction towards the center
+      .on('tick', ticked);
+
+    const link = svg.append('g')
+      .attr('class', 'links')
+      .selectAll('line')
+      .data(links)
+      .enter().append('line')
+      .attr('stroke-width', 2)
+      .attr('stroke', '#999');
+
+    const node = svg.append('g')
+      .attr('class', 'nodes')
+      .selectAll('circle')
+      .data(nodes)
+      .enter().append('circle')
+      .attr('r', d => d.size)
+      .attr('fill', d => d3.schemeTableau10[d.group])
+      .call(d3.drag()
+        .on('start', dragstarted)
+        .on('drag', dragged)
+        .on('end', dragended));
+
+    const labels = svg.append('g')
+      .attr('class', 'labels')
+      .selectAll('text')
+      .data(nodes)
+      .enter().append('text')
+      .attr('text-anchor', 'middle')
+      .attr('dy', '.35em')
+      .text(d => d.icon)
+      .attr('class', 'text-lg');
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = Math.max(d.size, Math.min(width - d.size, event.x));
+      d.fy = Math.max(d.size, Math.min(height - d.size, event.y));
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    function ticked() {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y);
+
+      node
+        .attr('cx', d => {
+          // Constrain x position within the canvas
+          d.x = Math.max(d.size, Math.min(width - d.size, d.x));
+          return d.x;
+        })
+        .attr('cy', d => {
+          // Constrain y position within the canvas
+          d.y = Math.max(d.size, Math.min(height - d.size, d.y));
+          return d.y;
+        });
+
+      labels
+        .attr('x', d => d.x)
+        .attr('y', d => d.y);
+    }
+  </script>
+
+<section id="graph" class="h-[80vh] bg-gray-100 shadow-md rounded-lg p-6"></section>
