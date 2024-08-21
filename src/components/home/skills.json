@@ -1,0 +1,171 @@
+{
+    "categories": [
+      {
+        "id": "Design",
+        "label": "Design",
+        "color": "green",
+        "children": [
+          {
+            "id": "UI/UX Design",
+            "label": "UI/UX Design",
+            "color": "lightgreen",
+            "children": [
+              {
+                "id": "Figma",
+                "label": "Figma",
+                "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Figma_logo_%282019%29.svg/1200px-Figma_logo_%282019%29.svg.png"
+              },
+              {
+                "id": "Adobe XD",
+                "label": "Adobe XD",
+                "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Adobe_XD_CC_icon.svg/1200px-Adobe_XD_CC_icon.svg.png"
+              },
+              {
+                "id": "Prototyping",
+                "label": "Prototyping",
+                "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Prototyping.svg/1200px-Prototyping.svg.png"
+              },
+              {
+                "id": "Mobile App Design",
+                "label": "Mobile App Design",
+                "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Adobe_XD_logo.svg/1200px-Adobe_XD_logo.svg.png" }
+              ]
+            },
+            {
+              "id": "Graphic Design",
+              "label": "Graphic Design",
+              "color": "darkgreen",
+              "children": [
+                {
+                  "id": "Photoshop",
+                  "label": "Photoshop",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png"
+                },
+                {
+                  "id": "Adobe Illustrator",
+                  "label": "Adobe Illustrator",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Adobe_Illustrator_CC_icon.svg/1200px-Adobe_Illustrator_CC_icon.svg.png"
+                },
+                {
+                  "id": "Canva",
+                  "label": "Canva",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Canva_logo.svg/1200px-Canva_logo.svg.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Web Development",
+          "label": "Web Development",
+          "color": "blue",
+          "children": [
+            {
+              "id": "Front-End",
+              "label": "Front-End",
+              "color": "lightblue",
+              "children": [
+                {
+                  "id": "HTML",
+                  "label": "HTML",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"
+                },
+                {
+                  "id": "CSS",
+                  "label": "CSS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png"
+                },
+                {
+                  "id": "TailwindCSS",
+                  "label": "TailwindCSS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png"
+                },
+                {
+                  "id": "JavaScript",
+                  "label": "JavaScript",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript_logo_%28ES6%29.svg/1200px-JavaScript_logo_%28ES6%29.svg.png"
+                },
+                {
+                  "id": "ReactJS",
+                  "label": "ReactJS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+                },
+                {
+                  "id": "AstroJS",
+                  "label": "AstroJS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Astro_Logo_2021.svg/1200px-Astro_Logo_2021.svg.png"
+                },
+                {
+                  "id": "AlpineJS",
+                  "label": "AlpineJS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Alpine_JS_Logo.svg/1200px-Alpine_JS_Logo.svg.png"
+                }
+              ]
+            },
+            {
+              "id": "Back-End",
+              "label": "Back-End",
+              "color": "darkblue",
+              "children": [
+                {
+                  "id": "NodeJS",
+                  "label": "NodeJS",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png"
+                },
+                {
+                  "id": "Python",
+                  "label": "Python",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python_logo_and_wordmark.svg/1200px-Python_logo_and_wordmark.svg.png"
+                },
+                {
+                  "id": "CMS",
+                  "label": "CMS",
+                  "children": [
+                    {
+                      "id": "WordPress",
+                      "label": "WordPress",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/WordPress_logo.svg/1200px-WordPress_logo.svg.png"
+                    },
+                    {
+                      "id": "Shopify",
+                      "label": "Shopify",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Shopify_logo.svg/1200px-Shopify_logo.svg.png"
+                    },
+                    {
+                      "id": "Directus",
+                      "label": "Directus",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Directus_logo.svg/1200px-Directus_logo.svg.png"
+                    },
+                    {
+                      "id": "Strapi",
+                      "label": "Strapi",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Strapi_logo.svg/1200px-Strapi_logo.svg.png"
+                    },
+                    {
+                      "id": "Supabase",
+                      "label": "Supabase",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Supabase_Logo.svg/1200px-Supabase_Logo.svg.png"
+                    },
+                    {
+                      "id": "Pocketbase",
+                      "label": "Pocketbase",
+                      "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pocketbase_Logo.svg/1200px-Pocketbase_Logo.svg.png"
+                    }
+                  ]
+                },
+                {
+                  "id": "Web Scraping",
+                  "label": "Web Scraping",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Web_scraping.svg/1200px-Web_scraping.svg.png"
+                },
+                {
+                  "id": "Scripting",
+                  "label": "Scripting",
+                  "svg": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scripting_logo.svg/1200px-Scripting_logo.svg.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
