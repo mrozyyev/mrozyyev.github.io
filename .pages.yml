@@ -1,0 +1,64 @@
+media:
+  input: public/assets/images/uploads
+  output: /assets/images/uploads
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: src/content/post
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+      - name: description
+        type: string
+      - name: dateFormatted
+        type: string
+      - name: layout
+        type: string
+        hidden: true
+        readonly: true
+      - name: body
+        type: rich-text
+
+  - name: projects
+    label: Projects
+    type: file
+    path: src/collections/projects.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        type: string
+      - name: description
+        type: text
+      - name: image
+        type: image
+      - name: url
+        type: string
+
+  - name: experiences
+    label: Experiences
+    type: file
+    path: src/collections/experiences.json
+    format: json
+    list: true
+    fields:
+      - name: dates
+        type: string
+      - name: role
+        type: string
+      - name: company
+        type: string
+      - name: description
+        type: text
+      - name: logo
+        type: image
+
+  - name: skills
+    label: Skills
+    type: file
+    path: src/collections/skills.json
+    format: json
+
