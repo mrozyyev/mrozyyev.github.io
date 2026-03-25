@@ -1,6 +1,4 @@
-media:
-  input: public/assets/images/uploads
-  output: /assets/images/uploads
+media: media
 
 content:
   - name: posts
@@ -27,7 +25,9 @@ content:
     type: file
     path: src/collections/projects.json
     format: json
-    list: true
+    list:
+      collapsible:
+        summary: "{name}"
     fields:
       - name: name
         type: string
@@ -43,7 +43,9 @@ content:
     type: file
     path: src/collections/experiences.json
     format: json
-    list: true
+    list:
+      collapsible:
+        summary: "{role}"
     fields:
       - name: dates
         type: string
@@ -61,4 +63,47 @@ content:
     type: file
     path: src/collections/skills.json
     format: json
+    fields:
+      - name: categories
+        label: Categories
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+          - name: label
+            label: Label
+            type: string
+          - name: color
+            label: Color
+            type: string
+          - name: children
+            label: Children
+            type: object
+            list: true
+            fields:
+              - name: id
+                label: ID
+                type: string
+              - name: label
+                label: Label
+                type: string
+              - name: color
+                label: Color
+                type: string
+              - name: children
+                label: Skills
+                type: object
+                list: true
+                fields:
+                  - name: id
+                    label: ID
+                    type: string
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: svg
+                    label: SVG Image URL
+                    type: string
 
