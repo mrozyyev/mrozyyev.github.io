@@ -1,23 +1,119 @@
-media: media
+media:
+  input: public/assets/images
+  output: /assets/images
+  categories: [image]
+  extensions: [png, jpg, jpeg, webp, svg, gif, ico]
+
+settings:
+  content:
+    merge: true
 
 content:
+  - name: site-settings
+    label: Site Settings
+    type: file
+    path: src/collections/site-settings.json
+    format: json
+    fields:
+      - name: siteName
+        label: Site Name
+        type: string
+      - name: siteTitle
+        label: Site Title (browser tab)
+        type: string
+      - name: metaDescription
+        label: Meta Description (SEO)
+        type: text
+      - name: author
+        label: Author
+        type: string
+      - name: ogImage
+        label: OG Image
+        type: image
+      - name: favicon
+        label: Favicon
+        type: string
+      - name: heroGreeting
+        label: Hero Greeting
+        type: string
+      - name: heroDescription
+        label: Hero Description
+        type: text
+      - name: heroServices
+        label: Hero Services List
+        type: string
+        list: true
+      - name: nowText
+        label: Now Status Text
+        type: string
+      - name: aboutTitle
+        label: About Page Title
+        type: string
+      - name: aboutDescription
+        label: About Page Description
+        type: text
+      - name: aboutBio
+        label: About Bio
+        type: text
+      - name: connectText
+        label: Let's Connect Text
+        type: text
+      - name: email
+        label: Contact Email
+        type: string
+      - name: social
+        label: Social Links
+        type: object
+        fields:
+          - name: github
+            label: GitHub URL
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: instagram
+            label: Instagram URL
+            type: string
+          - name: x
+            label: X (Twitter) URL
+            type: string
+
+  - name: menu
+    label: Navigation Menu
+    type: file
+    path: src/collections/menu.json
+    format: json
+    list:
+      collapsible:
+        summary: "{name}"
+    fields:
+      - name: name
+        label: Label
+        type: string
+      - name: url
+        label: URL
+        type: string
+
   - name: posts
-    label: Blog posts
+    label: Blog Posts
     type: collection
     path: src/content/post
     format: yaml-frontmatter
     fields:
       - name: title
+        label: Title
         type: string
       - name: description
+        label: Description
         type: string
       - name: dateFormatted
+        label: Date
         type: string
       - name: layout
         type: string
         hidden: true
-        readonly: true
       - name: body
+        label: Content
         type: rich-text
 
   - name: projects
@@ -30,12 +126,18 @@ content:
         summary: "{name}"
     fields:
       - name: name
+        label: Project Name
         type: string
       - name: description
+        label: Description
         type: text
       - name: image
+        label: Preview Image
         type: image
+        options:
+          path: projects
       - name: url
+        label: Project URL
         type: string
 
   - name: experiences
@@ -45,18 +147,25 @@ content:
     format: json
     list:
       collapsible:
-        summary: "{role}"
+        summary: "{role} @ {company}"
     fields:
       - name: dates
+        label: Dates
         type: string
       - name: role
+        label: Role
         type: string
       - name: company
+        label: Company
         type: string
       - name: description
+        label: Description
         type: text
       - name: logo
+        label: Company Logo
         type: image
+        options:
+          path: experiences
 
   - name: skills
     label: Skills
@@ -65,9 +174,11 @@ content:
     format: json
     fields:
       - name: categories
-        label: Categories
+        label: Skill Categories
         type: object
-        list: true
+        list:
+          collapsible:
+            summary: "{label}"
         fields:
           - name: id
             label: ID
@@ -78,10 +189,15 @@ content:
           - name: color
             label: Color
             type: string
+          - name: active
+            label: Active
+            type: boolean
           - name: children
-            label: Children
+            label: Sub-categories
             type: object
-            list: true
+            list:
+              collapsible:
+                summary: "{label}"
             fields:
               - name: id
                 label: ID
@@ -92,10 +208,15 @@ content:
               - name: color
                 label: Color
                 type: string
+              - name: active
+                label: Active
+                type: boolean
               - name: children
                 label: Skills
                 type: object
-                list: true
+                list:
+                  collapsible:
+                    summary: "{label}"
                 fields:
                   - name: id
                     label: ID
@@ -104,6 +225,8 @@ content:
                     label: Label
                     type: string
                   - name: svg
-                    label: SVG Image URL
+                    label: Icon URL
                     type: string
-
+                  - name: active
+                    label: Active
+                    type: boolean

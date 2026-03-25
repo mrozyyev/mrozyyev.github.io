@@ -1,0 +1,28 @@
+{
+  "siteName": "mrozyyev",
+  "siteTitle": "mrozyyev - Web developer",
+  "metaDescription": "Experienced Web Developer specializing in creating responsive, user-friendly websites and applications. Explore my portfolio to see projects showcasing my expertise in modern web technologies. Let's collaborate to bring your digital ideas to life.",
+  "author": "mrozyyev",
+  "ogImage": "/assets/images/og/mrozyyev-webdev.webp",
+  "favicon": "/favicon.png",
+  "heroGreeting": "Hello, I'm mrozyyev.",
+  "heroDescription": "Creative and technically proficient Web Developer and UI/UX Designer with over ~2 years of experience, currently studying + living in Romania. Right now my main focus is on Web development.",
+  "heroServices": [
+    "Web Development(Front & Back)",
+    "UI|UX Design",
+    "and more..."
+  ],
+  "nowText": "Currently working as freelancer",
+  "aboutTitle": "About Me",
+  "aboutDescription": "Hello 👋 I am a creative and technically proficient Web Developer and UI/UX Designer with over ~2 years of experience, currently studying + living in Romania. I'm passionate about building new products and learning new technologies.",
+  "aboutBio": "My career began in graphic design, transitioned through UI/UX design, and evolved into web development—where I rediscovered my true passion for coding. I find web development the most enjoyable and fulfilling aspect of my work, and I thrive on the challenge, creativity, unlimited learning opportunity it offers.\n\nNow that I am based in Europe, I am eager to join a dynamic team where I can further develop my skills and contribute to innovative projects.",
+  "connectText": "I'm not a social media guy (for privacy reasons), but feel free to reach out to me via:",
+  "email": "rozyyevro@gmail.com",
+  "social": {
+    "github": "https://github.com/mrozyyev",
+    "linkedin": "https://www.linkedin.com/in/mrozyyev/",
+    "instagram": "https://instagram.com/mrozyyev",
+    "x": "https://twitter.com/m_rozyyev"
+  },
+  "footerCopyright": "©{year}"
+}

@@ -1,16 +1,16 @@
 ---
 import experiences from "../collections/experiences.json";
+import settings from "../collections/site-settings.json";
 import AboutExperience from "../components/about-experience.astro";
 import PageHeading from "../components/page-heading.astro";
 import Layout from "../layouts/main.astro";
 ---
 
-<Layout title="mrozyyev | About Me">
+<Layout title={`${settings.siteName} | ${settings.aboutTitle}`}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
-      title="About Me"
-      description=`Hello 👋 I am a creative and technically proficient Web Developer and UI/UX Designer with
-      over ~2 years of experience, currently studying + living in Romania. I'm passionate about building new products and learning new technologies.`
+      title={settings.aboutTitle}
+      description={settings.aboutDescription}
     />
 
     <img
@@ -20,18 +20,13 @@ import Layout from "../layouts/main.astro";
     />
 
     <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Short Bio</h2>
-    <p
+    <div
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
-      My career began in graphic design, transitioned through UI/UX design, and evolved
-      into web development—where I rediscovered my true passion for coding. I find
-      web development the most enjoyable and fulfilling aspect of my work, and I
-      thrive on the challenge, creativity, unlimited learning opportunity it offers.
-      <br />
-
-      Now that I am based in Europe, I am eager to join a dynamic team where I
-      can further develop my skills and contribute to innovative projects.
-    </p>
+      {settings.aboutBio.split('\n\n').map((paragraph) => (
+        <p class="mb-4">{paragraph}</p>
+      ))}
+    </div>
 
     <h2
       class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
@@ -76,14 +71,14 @@ import Layout from "../layouts/main.astro";
     <p
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
-      I'm not a social media guy(for privacy reasons)  <a
-      href="https://www.linkedin.com/in/mrozyyev/"
-      target="_blank"
-        class="text-indigo-600 underline dark:text-indigo-500">but here is my LinkedIn</a
-      >, or you can send me an <a
-        href="mailto:rozyyevro@gmail.com"
-        class="text-indigo-600 underline dark:text-indigo-500">email</a
-      > and I'll be sure to get back to you.
+      {settings.connectText} <a
+        href={settings.social.linkedin}
+        target="_blank"
+        class="text-indigo-600 underline dark:text-indigo-500">LinkedIn</a
+      > | <a
+        href={`mailto:${settings.email}`}
+        class="text-indigo-600 underline dark:text-indigo-500">Email</a
+      >
     </p>
   </section>
 </Layout>

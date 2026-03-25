@@ -1,5 +1,6 @@
 ---
 import Logo from "../components/logo.astro";
+import settings from "../collections/site-settings.json";
 ---
 
 <section
@@ -18,7 +19,7 @@ import Logo from "../components/logo.astro";
       class="inline-flex items-center justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
     >
       <a
-        href="https://github.com/mrozyyev"
+        href={settings.social.github}
         target="_blank"
         class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
       >
@@ -35,7 +36,7 @@ import Logo from "../components/logo.astro";
         >
       </a>
       <a
-        href="https://www.linkedin.com/in/mrozyyev/"
+        href={settings.social.linkedin}
         target="_blank"
         class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
       >
@@ -53,7 +54,7 @@ import Logo from "../components/logo.astro";
       </a>
 
       <a
-        href="https://instagram.com/mrozyyev"
+        href={settings.social.instagram}
         target="_blank"
         class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
       >
@@ -71,7 +72,7 @@ import Logo from "../components/logo.astro";
       </a>
 
       <a
-        href="https://twitter.com/m_rozyyev"
+        href={settings.social.x}
         target="_blank"
         class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
       >

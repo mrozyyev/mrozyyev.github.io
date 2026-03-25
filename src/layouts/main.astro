@@ -2,7 +2,9 @@
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
+import settings from "../collections/site-settings.json";
 const { title } = Astro.props;
+const pageTitle = title || settings.siteTitle;
 ---
 
 <!doctype html>
@@ -10,14 +12,13 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content="Experienced Web Developer specializing in creating responsive, user-friendly websites and applications. Explore my portfolio to see projects showcasing my expertise in modern web technologies. Let's collaborate to bring your digital ideas to life." />
-    <meta name="author" content="mrozyyev" />    
+    <title>{pageTitle}</title>
+    <meta name="description" content={settings.metaDescription} />
+    <meta name="author" content={settings.author} />
 
-        <!-- Open Graph meta tags -->
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content="Experienced Web Developer specializing in creating responsive, user-friendly websites and applications. Explore my portfolio to see projects showcasing my expertise in modern web technologies. Let's collaborate to bring your digital ideas to life." />
-        <meta property="og:image" content="/mrozyyev-webdev.webp" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={settings.metaDescription} />
+        <meta property="og:image" content={settings.ogImage} />
         <meta property="og:url" content={Astro.request.url} />
         <meta property="og:type" content="website" />
         
@@ -41,7 +42,7 @@ const { title } = Astro.props;
         border-radius: 20px;
       }
     </style>
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href={settings.favicon} />
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
