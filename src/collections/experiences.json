@@ -6,24 +6,16 @@
     "description": "I joined as a developer and ended up being much more than that — part operator, part growth driver, part fixer of whatever broke next. I worked across a group of hospitality and tourism businesses: Ondas de Angelo (boat tours on the Tagus River in Lisbon, one of the city's top-rated operators), the Danube Delta boat tour operation in Romania, ManuBBQ and its 7 sub-brands (restaurants), and ManuBnB (short-term accommodation).\n\nTech & product work\nBuilt and maintained web properties using React, Astro, Supabase, Directus, and various CMS platforms — including manubbq.ro and manubnb.com\nDesigned and automated workflows with n8n: booking confirmations, CRM syncs, payment notifications, and internal reporting pipelines\nIntegrated OTA platforms (Booking.com, GetYourGuide, Viator, Wolt, Bolt, Glovo) and the hotel PMS 5StarDesk / Travelminit booking system into unified operational flows\nLed a small dev team, coordinating between designers, external contractors, and non-technical stakeholders\n\nOperations & growth\nManaged restaurant operations for ManuBBQ across 7 brands on Wolt, Bolt, and Glovo — handling menus, availability, pricing, and dispute resolution\nRan OTA operations for ManuBnB on Booking.com and other platforms: listing optimization, rate management, availability sync, and guest communications\nHandled multi-channel customer support across email, booking platforms, and messaging — resolving issues, rescheduling, refunds, and escalations"
   },
   {
-    "dates": "November 2022 · PRESENT",
-    "role": "Web developer",
-    "company": "Self employed @ Upwork & Fiverr",
-    "description": "Offering my illustrative and creative skills.",
-    "logo": "/assets/images/experiences/upwork-icon.svg"
+    "dates": "May 2023 – Sep 2023",
+    "role": "Web app developer",
+    "company": "Bars Confectionary · Ashgabat, Turkmenistan",
+    "description": "Redesigned and redeveloped the company's web app from requirements gathering through to deployment. Frontend in AstroJS, backend in Directus. Full lifecycle: UX, build, test, optimise, deploy.\n"
   },
   {
-    "dates": "January 2021 - PRESENT",
-    "role": "UI/UX designer",
+    "dates": "2021 · PRESENT",
+    "role": "Freelance developer & designer",
     "company": "Self employed @ Upwork & Fiverr",
-    "description": "Offering my illustrative and creative skills.",
-    "logo": "/assets/images/experiences/fiverr-icon.svg"
-  },
-  {
-    "dates": "December 2019 · January 2021",
-    "role": "Graphic designer",
-    "company": "Self employed @ Upwork & Fiverr",
-    "description": "Offered my illustrative and creative skills.",
+    "description": "Web development, UI/UX design, and graphic design work for clients internationally. Started in graphic design, moved through UI/UX, landed on development — where the real challenge is.",
     "logo": "/assets/images/experiences/upwork-icon.svg"
   }
 ]
