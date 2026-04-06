@@ -1,12 +1,8 @@
 ---
-import Button from "../components/button.astro";
 import Pulse from "../components/pulse.astro";
-import Projects from "../components/home/projects.astro";
 import Separator from "../components/home/separator.astro";
-import Writings from "../components/home/writings.astro";
-import Skills from "../components/home/skills2.astro";
+import WhatIDo from "../components/WhatIDo.astro";
 import Layout from "../layouts/main.astro";
-import ProjectScroll from "../components/project-scroll.astro";
 import ProjectsScroll from "../components/home/projects-scroll.astro";
 import settings from "../collections/site-settings.json";
 
@@ -86,9 +82,8 @@ import settings from "../collections/site-settings.json";
     </div>
   </div>
 
-  <Separator text="Languages & Tools I use"/>
-  <!-- <D3Skill  client:load/> -->
-  <Skills />
+  <Separator text="What I do"/>
+  <WhatIDo />
   <Separator text="Some of my projects" />
   <!-- <Projects /> -->
   <ProjectsScroll />

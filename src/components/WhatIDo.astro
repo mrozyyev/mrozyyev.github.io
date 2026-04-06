@@ -1,0 +1,123 @@
+---
+import capabilities from "../collections/capabilities.json";
+---
+
+<section class="max-w-4xl mx-auto px-7 lg:px-0">
+  <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
+    What I do
+  </h2>
+  <p class="mb-8 text-base text-neutral-600 dark:text-neutral-400">
+    I help small businesses and startups ship real products — websites, apps, automations, and everything in between.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {capabilities.map((cap) => (
+      <div class="group relative rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 p-5 transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-sm">
+        <h3 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          {cap.title}
+        </h3>
+        <p class="text-[13px] leading-relaxed text-neutral-500 dark:text-neutral-400 mb-4">
+          {cap.description}
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {cap.tags.map((tag) => (
+            <span class="inline-block rounded-full bg-neutral-100 dark:bg-neutral-800 px-2.5 py-0.5 text-[11px] font-medium text-neutral-500 dark:text-neutral-400">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16" id="ai-widget">
+    <div class="flex items-center gap-2 mb-3">
+      <p class="text-xs uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+        See if Muhammet is the right fit for your project
+      </p>
+      <span class="text-[14px] text-neutral-300 dark:text-neutral-600">— ask the AI he configured lol</span>
+    </div>
+    <div class="relative">
+      <div class="flex gap-2">
+        <input
+          type="text"
+          id="ai-input"
+          placeholder="Describe what you need — e.g. I need a booking system for my tour business"
+          class="flex-1 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 dark:placeholder:text-neutral-600 outline-none transition-colors focus:border-neutral-400 dark:focus:border-neutral-600"
+        />
+        <button
+          id="ai-btn"
+          class="shrink-0 rounded-lg bg-neutral-900 dark:bg-neutral-100 px-5 py-3 text-sm font-medium text-white dark:text-neutral-900 transition-all hover:bg-neutral-800 dark:hover:bg-neutral-200 disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          Ask
+        </button>
+      </div>
+      <div
+        id="ai-output"
+        class="mt-3 hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/30 px-5 py-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+      >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes pulse-border {
+    0%, 100% { border-color: rgb(163 163 163 / 0.3); }
+    50% { border-color: rgb(163 163 163 / 0.8); }
+  }
+  :global(.dark) .ai-loading {
+    animation: pulse-border-dark 1.5s ease-in-out infinite;
+  }
+  .ai-loading {
+    animation: pulse-border 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-border-dark {
+    0%, 100% { border-color: rgb(64 64 64 / 0.5); }
+    50% { border-color: rgb(115 115 115 / 0.8); }
+  }
+</style>
+
+<script>
+  const input = document.getElementById("ai-input") as HTMLInputElement;
+  const btn = document.getElementById("ai-btn") as HTMLButtonElement;
+  const output = document.getElementById("ai-output") as HTMLDivElement;
+
+  async function askAI() {
+    const query = input.value.trim();
+    if (!query) return;
+
+    btn.disabled = true;
+    btn.textContent = "...";
+    output.classList.remove("hidden");
+    output.classList.add("ai-loading");
+    output.innerHTML = '<span class="inline-flex gap-1 text-neutral-400"><span class="animate-pulse">.</span><span class="animate-pulse" style="animation-delay:0.2s">.</span><span class="animate-pulse" style="animation-delay:0.4s">.</span></span>';
+
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: query }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      output.textContent = data.reply;
+    } catch {
+      output.textContent = "Couldn't reach the AI right now — feel free to email me directly instead.";
+    } finally {
+      output.classList.remove("ai-loading");
+      btn.disabled = false;
+      btn.textContent = "Ask";
+    }
+  }
+
+  btn.addEventListener("click", askAI);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") askAI();
+  });
+</script>

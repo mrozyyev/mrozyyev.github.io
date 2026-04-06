@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Web development",
+    "description": "Websites and web apps, CMS-driven, fast and maintainable. Built so non-technical clients can manage their own content.",
+    "tags": ["Astro", "React", "Directus", "Tailwind", "Supabase"]
+  },
+  {
+    "title": "Mobile apps",
+    "description": "Cross-platform iOS + Android with React Native. From idea to working product including backend, auth, and data.",
+    "tags": ["React Native", "Expo", "SQLite"]
+  },
+  {
+    "title": "Automations & workflows",
+    "description": "Workflows that save time and cut manual work. Booking flows, CRM syncs, AI-assisted pipelines.",
+    "tags": ["n8n", "Python", "APIs", "Webhooks"]
+  },
+  {
+    "title": "Integrations",
+    "description": "Connecting tools that don't talk to each other. OTAs, booking platforms, delivery apps, payment providers, CRMs.",
+    "tags": ["Booking.com", "Wolt", "GetYourGuide", "Viator", "Stripe"]
+  },
+  {
+    "title": "Tech + operations",
+    "description": "I can build the system and help run it. Good for small teams without a dedicated tech person.",
+    "tags": ["CRM", "Support", "OTA management"]
+  },
+  {
+    "title": "Whatever the project needs",
+    "description": "Scrapers, dashboards, internal tools, Figma mockups, SEO setup. I scope it, build it, hand it over cleanly.",
+    "tags": ["Figma", "Python", "Linux", "Git"]
+  }
+]
